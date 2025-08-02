@@ -15,7 +15,7 @@ Add-Content -Path "$folder\flock.cfg" -Value "note=see internal asset shepherd.j
 New-Item -Path "$folder\stage2.txt" -ItemType File -Force | Out-Null
 Add-Content -Path "$folder\stage2.txt" -Value "Session=Active"
 Add-Content -Path "$folder\stage2.txt" -Value "Operator=SYS_TESTOPS_1"
-Add-Content -Path "$folder\stage2.txt" -Value "Hint=The author is hidden in rotation. Thirteen turns should show you the sheep."
+Add-Content -Path "$folder\stage2.txt" -Value "Hint=- .... . / .- ..- - .... --- .-. / .. ... / .... .. -.. -.. . -. / .. -. / .-. --- - .- - .. --- -. .-.-.- / - .... .. .-. - . . -. / - ..- .-. -. ... / ... .... --- ..- .-.. -.. / ... .... --- .-- / -.-- --- ..- / - .... . / ... .... . . .--. .-.-.-"
 
 # Drop image
 $img = "https://raw.githubusercontent.com/flocktrack/sysdiag-utils/main/shepherd.jpg"
