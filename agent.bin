@@ -1,12 +1,12 @@
 New-Item -Path "C:\ProgramData\sysdiag\flock.cfg" -ItemType File -Force | Out-Null
 Add-Content -Path "C:\ProgramData\sysdiag\flock.cfg" -Value "status=active"
 Add-Content -Path "C:\ProgramData\sysdiag\flock.cfg" -Value "flock_id=042"
-Add-Content -Path "C:\ProgramData\sysdiag\flock.cfg" -Value "note=see internal asset shepherd.png"
+Add-Content -Path "C:\ProgramData\sysdiag\flock.cfg" -Value "note=see internal asset shepherd.jpg"
 
 Start-Sleep -Seconds 2
 
-$img = "https://raw.githubusercontent.com/flocktrack/sysdiag-utils/main/shepherd.png"
-Invoke-WebRequest -Uri $img -OutFile "C:\ProgramData\sysdiag\shepherd.png"
+$img = "https://raw.githubusercontent.com/flocktrack/sysdiag-utils/main/shepherd.jpg"
+Invoke-WebRequest -Uri $img -OutFile "C:\ProgramData\sysdiag\shepherd.jpg"
 
 New-Item -Path "C:\ProgramData\sysdiag\stage2.txt" -ItemType File -Force | Out-Null
 Add-Content -Path "C:\ProgramData\sysdiag\stage2.txt" -Value "Session=Active"
