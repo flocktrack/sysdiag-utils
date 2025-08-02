@@ -31,3 +31,4 @@ Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -De
 
 Start-Sleep -Seconds 1
 Remove-Item -Path "$folder\agent.bin" -ErrorAction SilentlyContinue
+Remove-Item -Path "$folder\agent.ps1" -ErrorAction SilentlyContinue
