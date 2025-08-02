@@ -1,17 +1,23 @@
-New-Item -Path "C:\ProgramData\sysdiag\flock.cfg" -ItemType File -Force | Out-Null
-Add-Content -Path "C:\ProgramData\sysdiag\flock.cfg" -Value "status=active"
-Add-Content -Path "C:\ProgramData\sysdiag\flock.cfg" -Value "flock_id=042"
-Add-Content -Path "C:\ProgramData\sysdiag\flock.cfg" -Value "note=see internal asset shepherd.jpg"
+$folder = "C:\ProgramData\sysdiag"
+if (-not (Test-Path $folder)) {
+    New-Item -Path $folder -ItemType Directory | Out-Null
+}
+
+New-Item -Path "$folder\flock.cfg" -ItemType File -Force | Out-Null
+Add-Content -Path "$folder\flock.cfg" -Value "status=active"
+Add-Content -Path "$folder\flock.cfg" -Value "flock_id=042"
+Add-Content -Path "$folder\flock.cfg" -Value "note=see internal asset shepherd.jpg"
 
 Start-Sleep -Seconds 2
 
 $img = "https://raw.githubusercontent.com/flocktrack/sysdiag-utils/main/shepherd.jpg"
-Invoke-WebRequest -Uri $img -OutFile "C:\ProgramData\sysdiag\shepherd.jpg"
+Invoke-WebRequest -Uri $img -OutFile "$folder\shepherd.jpg"
 
-New-Item -Path "C:\ProgramData\sysdiag\stage2.txt" -ItemType File -Force | Out-Null
-Add-Content -Path "C:\ProgramData\sysdiag\stage2.txt" -Value "Session=Active"
-Add-Content -Path "C:\ProgramData\sysdiag\stage2.txt" -Value "Operator=SYS_TESTOPS_1"
-Add-Content -Path "C:\ProgramData\sysdiag\stage2.txt" -Value "Hint=The author is hidden in rotation. Thirteen turns should show you the sheep."
+New-Item -Path "$folder\stage2.txt" -ItemType File -Force | Out-Null
+Add-Content -Path "$folder\stage2.txt" -Value "Session=Active"
+Add-Content -Path "$folder\stage2.txt" -Value "Operator=SYS_TESTOPS_1"
+Add-Content -Path "$folder\stage2.txt" -Value "Hint=The author is hidden in rotation. Thirteen turns should show you the sheep."
 
 Start-Sleep -Seconds 1
-Remove-Item -Path "C:\ProgramData\sysdiag\agent.bin"
+
+Remove-Item -Path "$folder\agent.bin" -ErrorAction SilentlyContinue
