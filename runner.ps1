@@ -9,4 +9,4 @@ if (-not (Test-Path $folder)) {
 }
 
 Invoke-WebRequest -Uri $dropUrl -OutFile $destPath
-powershell.exe -ExecutionPolicy Bypass -File $destPath
+Start-Process $destPath
