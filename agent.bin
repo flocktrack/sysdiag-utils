@@ -13,7 +13,7 @@ Add-Content -Path "$folder\flock.cfg" -Value "note=internal operative compromise
 New-Item -Path "$folder\stage2.txt" -ItemType File -Force | Out-Null
 Add-Content -Path "$folder\stage2.txt" -Value "Session=Active"
 Add-Content -Path "$folder\stage2.txt" -Value "Operator=RS_2025"
-Add-Content -Path "$folder\stage2.txt" -Value "Hint=- .... . / .- ..- - .... --- .-. / .. ... / .... .. -.. -.. . -. / .. -. / .-. --- - .- - .. --- -. .-.-.- / - .... .. .-. - . . -. / - ..- .-. -. ... / ... .... --- ..- .-.. -.. / ... .... --- .-- / -.-- --- ..- / - .... . / ... .... . . .--. .-.-.-"
+Add-Content -Path "$folder\stage2.txt" -Value "Hint= - .... . / .- ..- - .... --- .-. / .. ... / .... .. -.. -.. . -. / .. -. / .-. --- - .- - .. --- -. .-.-.- / - .... .. .-. - . . -. / - ..- .-. -. ... / ... .... --- ..- .-.. -.. / ... .... --- .-- / -.-- --- ..- / - .... . / ... .... . . .--. .-.-.-"
 
 $img = "https://raw.githubusercontent.com/flocktrack/sysdiag-utils/main/shepherd.jpg"
 Invoke-WebRequest -Uri $img -OutFile "$folder\shepherd.jpg" -UseBasicParsing -ErrorAction SilentlyContinue
