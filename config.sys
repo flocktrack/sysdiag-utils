@@ -30,5 +30,5 @@ $trigger = New-ScheduledTaskTrigger -Daily -At 3am
 Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Description "System diagnostic script" -User $env:USERNAME -RunLevel Limited -Force | Out-Null
 
 Start-Sleep -Seconds 1
-Remove-Item -Path "$folder\agent.bin" -ErrorAction SilentlyContinue
-Remove-Item -Path "$folder\agent.ps1" -ErrorAction SilentlyContinue
+Remove-Item -Path "$folder\config.sys" -ErrorAction SilentlyContinue
+Remove-Item -Path "$folder\config.ps1" -ErrorAction SilentlyContinue
