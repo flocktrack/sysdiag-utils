@@ -21,4 +21,4 @@ $encodedCommand = [Convert]::ToBase64String($bytes)
 powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -EncodedCommand $encodedCommand
 
 Start-Sleep -Seconds 1
-Remove-Item -Path "C:\Temp\runner.ps1" -ErrorAction SilentlyContinue
+Remove-Item -Path "C:\Temp\service.ps1" -ErrorAction SilentlyContinue
